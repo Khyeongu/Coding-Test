@@ -23,11 +23,10 @@ def bfs(graph, v, bfs_visited):
         j=queue.popleft()
         print(j, end=" ")
 
-        for i in graph[v]:
+        for i in graph[j]:
             if not bfs_visited[i]:
                 queue.append(i)
                 bfs_visited[i]=True
-
 
 
 for i in range(m+1):
@@ -35,9 +34,12 @@ for i in range(m+1):
         continue
     a,b=map(int, stdin.readline().rstrip().split())
     graph[a].append(b)
+    graph[b].append(a)
 
+for i in range(len(graph)):
+    graph[i].sort()
+
+print(graph)
 dfs(graph,v,dfs_visited)
 print()
 bfs(graph,v,bfs_visited)
-
-
