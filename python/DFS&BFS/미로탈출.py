@@ -2,8 +2,8 @@ from sys import stdin
 from collections import deque
 
 def bfs(x,y):
-    queue=deque([x,y])
-    #queue.append([x,y])
+    queue=deque()
+    queue.append([x,y])
     while queue:
         x,y=queue.popleft()
         for i in range(4):

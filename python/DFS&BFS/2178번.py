@@ -3,7 +3,6 @@ from collections import deque
 
 x, y = map(int, stdin.readline().rstrip().split())
 
-
 maze=[]
 distance=0
 
